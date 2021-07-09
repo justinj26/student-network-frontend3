@@ -15,9 +15,7 @@ import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 const axios = require("axios");
 const React = require("react");
 
-const url = "https://student-network-backend-stage.herokuapp.com/";
-
-const request_mentor_url = `${url}/requestmentor`
+const request_mentor_url = "/requestmentor"
 
 // const data = {
 //   college: "University of Michigan",

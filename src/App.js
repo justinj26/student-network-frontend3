@@ -1,6 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
-
 import "./styles.css";
 import Login from "./Login";
 // import Badge from "./Badge";
@@ -11,6 +8,7 @@ import Home from "./Home";
 import MatchesAndRequests from "./MatchesAndRequests";
 import { Switch, Route } from "react-router-dom";
 import Filter from "./Filter";
+import SignUp1 from "./SignUp1";
 
 // const user = localStorage.getItem("user_id");
 
@@ -36,10 +34,12 @@ export default function App() {
 
   return (
     <div className="App">
-      {/* <Home /> */}
+      <Home />
       {/* <Filter /> */}
-      {/* <MatchesAndRequests /> */}
-      <Welcome />
+      <MatchesAndRequests />
+      {/* <SignUp1 /> */}
+      {/* <Welcome /> */}
+      {/* <SignUp /> */}
       {/* {display} */}
       {/* if (localStorage.getItem("user_id")) */}
       <Switch>

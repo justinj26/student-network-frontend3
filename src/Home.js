@@ -7,12 +7,14 @@ import axios from "axios";
 import Mentors from "./Mentors";
 import Profile from "./Profile";
 import Filter from "./Filter";
+import MatchesAndRequests from "./MatchesAndRequests";
 // import Nav from "react-bootstrap/Nav";
 // import NavDropdown from "react-bootstrap/NavDropdown";
 // import Form from "react-bootstrap/Form";
 // import { Row, Col } from "antd";
 import { ButtonToolbar, ButtonGroup } from "react-bootstrap";
 import { Switch, Route, Link as RouterLink } from "react-router-dom";
+import HomePageBadgeGrid2 from "./HomePageBadgeGrid2";
 
 const user_id = localStorage.getItem("user_id");
 const token = localStorage.getItem("token");
@@ -24,7 +26,6 @@ const url_incoming = "/getincomingrequests";
 const url_favorite = "/getfavoritematches";
 const url_outgoing = "/getoutgoingrequests";
 const url_saved = "/getsavedprofiles";
-
 
 const users = [
   {
@@ -79,41 +80,41 @@ class Home extends React.Component {
     try {
       const response_1 = await axios.get(url_all);
       const json_1 = response_1.json();
-      this.setState({ all_matches: json_1 })
-    } catch(error) {
-      console.log(error)
+      this.setState({ all_matches: json_1 });
+    } catch (error) {
+      console.log(error);
     }
 
     try {
       const response_2 = await axios.get(url_incoming);
       const json_2 = response_2.json();
-      this.setState({ incoming_match_requests: json_2 })
-    } catch(error) {
-      console.log(error)
+      this.setState({ incoming_match_requests: json_2 });
+    } catch (error) {
+      console.log(error);
     }
 
     try {
       const response_3 = await axios.get(url_favorite);
       const json_3 = response_3.json();
-      this.setState({ favorite_matches: json_3 })
-    } catch(error) {
-      console.log(error)
+      this.setState({ favorite_matches: json_3 });
+    } catch (error) {
+      console.log(error);
     }
 
     try {
       const response_4 = await axios.get(url_outgoing);
       const json_4 = response_4.json();
-      this.setState({ outgoing_match_requests: json_4 })
-    } catch(error) {
-      console.log(error)
+      this.setState({ outgoing_match_requests: json_4 });
+    } catch (error) {
+      console.log(error);
     }
 
     try {
       const response_5 = await axios.get(url_saved);
       const json_5 = response_5.json();
-      this.setState({ saved_profiles: json_5 })
-    } catch(error) {
-      console.log(error)
+      this.setState({ saved_profiles: json_5 });
+    } catch (error) {
+      console.log(error);
     }
 
     try {
@@ -153,10 +154,10 @@ class Home extends React.Component {
           {/* <Buttonoolbar className="mr-2" aria-label="Toolbar with button groups">
             <ButtonGroup className="mr-2" aria-label="First group"> */}
           <Button component={RouterLink} to="/home">
-            Home
+            <b>Home</b>
           </Button>
           <Button component={RouterLink} to="home/user">
-            Profile
+            <b>Profile</b>
           </Button>
           {/* <Button component={RouterLink} to="">
             Mentors
@@ -165,10 +166,10 @@ class Home extends React.Component {
             <b>Inbox</b>
           </Button>
           <Button component={RouterLink} to="/home/Calendar">
-            Calendar
+            <b>Calendar</b>
           </Button>
           <Button component={RouterLink} to="home/search">
-            Search
+            <b>Search</b>
           </Button>
           {/* <Button
             variant="outlined"
@@ -185,6 +186,7 @@ class Home extends React.Component {
           </ButtonToolbar> */}
         </div>
         <Filter />
+        <MatchesAndRequests />
         <div className={styles.main_grid}>
           <Switch>
             <Route path="/updateprofile"></Route>
@@ -194,36 +196,17 @@ class Home extends React.Component {
             <Route path="/mentors">
               <Mentors user_id={user_id} token={token} />
             </Route>
-            <Route path="/all_matches">
-
-            </Route>
-            <Route path="/incoming_match_requests">
-
-            </Route>
-            <Route path="/favorite_matches">
-
-            </Route>
-            <Route path="/outgoing_match_requests">
-
-            </Route>
-            <Route path="/saved_profiles">
-
-            </Route>
-            <Route path="/filter">
-
-            </Route>
-            <Route>
-
-            </Route>
-            <Route>
-
-            </Route>
-
-
-            
+            <Route path="/all_matches"></Route>
+            <Route path="/incoming_match_requests"></Route>
+            <Route path="/favorite_matches"></Route>
+            <Route path="/outgoing_match_requests"></Route>
+            <Route path="/saved_profiles"></Route>
+            <Route path="/filter"></Route>
+            <Route></Route>
+            <Route></Route>
           </Switch>
 
-          <HomePageBadgeGrid users={users} />
+          <HomePageBadgeGrid2 users={users} />
         </div>
       </div>
     );

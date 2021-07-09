@@ -16,6 +16,12 @@
   background-repeat: no-repeat;
 } */
 
+.flex_center {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .header {
   display: inline-block;
   position: relative;
@@ -52,12 +58,51 @@ label {
 }
 
 input[type="email"],
-input[type="password"] {
+input[type="password"],
+input[type="text"],
+input[type="textarea"] {
   width: 250px;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
-  border-style: 0px 0px 2px 0px;
-  /* opacity: 0.1; */
+  /* border-style: 0px 0px 10px 0px; */
+  /* background-color:rgba(0, 0, 0, 0.5); */
   background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+input[type="email"]:active,
+input[type="password"]:active {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+.login_box select {
+
+  /* font-size: 18px; */
+
+  background-color: transparent;
+  max-width: 90%;
+  /* border-radius: 5px; */
+ 
+}
+
+.login_box select option {
+  margin: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  color: black;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+select option::selected {
+  margin: 40px;
+  background: rgba(0, 0, 0, 0.3);
+  color: black;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+textarea {
+  background-color: transparent;
 }
